@@ -10,4 +10,4 @@ sub run_makeglossaries {
   };
 }
 
-$clean_ext = "acn acr alg bbl glg glo gls ist nav out snm xdv";
+$clean_ext = "acn acr alg bbl glg glo gls ist nav out snm xdv aux blg fdb_latexmk fls lof log toc lot";
