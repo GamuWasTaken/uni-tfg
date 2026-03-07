@@ -1,36 +1,36 @@
-# Tittles:
+# Titles:
 
-Desarrollo de un lenguaje tipado transpilable a cualquier otro mediante la implementación de un set reducido de funciones
+[es] Desarrollo de un lenguaje tipado transpilable a cualquier otro mediante la implementación de un set reducido de funciones
 
-Development of a programming language tranpilable to any other language by implementing a reduced set of functions
+[en] Development of a programming language tranpilable to any other language by implementing a reduced set of functions
 
 # Brief description:
 
-A simple looking, easy to read and learn language that can be transpiled to any other language, allowing anyone to develop a solution in a typesafe and functional manner while allowing the integration with any other language and without loosing much efficiency.
+A simple looking, type-safe, easy to read and learn language that can be transpiled to any other language, allowing anyone to develop a solution in a type-safe and functional manner while integrating with any other language without loosing much efficiency.
 
-The language oughts to be simple to read and write from anywere (including smaller screens like in phones) with a simple modle of execution and a modular standard library.
+The language oughts to be simple to read and write from anywere (including smaller screens like in phones) with a simple model of execution and a modular standard library.
 
-This makes it easy to share solutions between different languages, leading to a faster development thanks to a diverse and compatible environment.
+This makes it easy to share common solutions between different languages, leading to faster developments thanks to a diverse and compatible environment.
 
 # Objectives:
 
-Design and implementation of
+Main objective is the design and implementation of
 - a typed functional programming language
 - a modular standard library
 - a mechanism for transpiling to any language
 
-Apart from this
+In addition,
 - demo for a language transpilation
-- documentation for the language
-- test to check everything is working
-- sintax highlighting
+- documentation of the language and tools around it
+- tests suite to check everything is working
+- sintax highlighting (tree-sitter grammar)
 - language server
 
-All this elements are to be done in an FOSS manner allowing for anyone to contribute to the project.
+All this elements are to be done in an FOSS manner allowing anyone to contribute to the project.
 
 # Metodology:
 
-Incremental and iterative 
+Incremental and iterative, employing common a git develompent flow, with conventional commits. 
 
 # Main phases:
 
@@ -41,7 +41,7 @@ Incremental and iterative
 
 # Required materials:
 
-None (?)
+A computer (?)
 
 # Category:
 
