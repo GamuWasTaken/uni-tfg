@@ -28,6 +28,8 @@ In addition,
 
 All this elements are to be done in an FOSS manner allowing anyone to contribute to the project.
 
+As the main goal of the project is to gain experience with designing and implementing languages, all the objectives are to be implemented at the lowest level possible, that is, without using off the shelf solutions like Bison or ANTLR, some smaller libraries may be used for complex algorithms and data structures such as LR/LL parsers or trees
+
 # Metodology:
 
 Incremental and iterative, employing common a git develompent flow, with conventional commits. 
