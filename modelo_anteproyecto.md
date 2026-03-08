@@ -1,8 +1,10 @@
 # Titles:
 
-[es] Desarrollo de un lenguaje tipado transpilable a cualquier otro mediante la implementación de un set reducido de funciones
+[es] Desarrollo de un lenguaje tipado transpilable a cualquier otro mediante la implementación de un conjunto reducido de funciones.
 
-[en] Development of a programming language tranpilable to any other language by implementing a reduced set of functions
+[en] Development of a programming language tranpilable to any other language by implementing a reduced set of functions.
+
+[gl] Desenvolvemento dunha linguaxe tipada que poida ser transpilada a calquera outra mediante a implementación dun conxunto reducido de funcións.
 
 # Brief description:
 
