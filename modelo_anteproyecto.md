@@ -31,13 +31,13 @@ As the implementation of such a syntax in other languages is improbable, I'll al
 Main objective is the design and implementation of
 - a typed functional programming language
 - a modular standard library
-- a mechanism for transpiling to any language
+- demo for a language transpilation
 
 In addition (and in order of probability),
-- demo for a language transpilation
 - documentation of the language and tools around it
-- tests suite to check everything is working
 - sintax highlighting (tree-sitter grammar)
+- a mechanism for transpiling to any language
+- tests suite to check everything is working
 - language server
 
 All this elements are to be done in an FOSS manner allowing anyone to contribute to the project.
