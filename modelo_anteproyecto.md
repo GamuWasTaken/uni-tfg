@@ -7,20 +7,22 @@
 [gl] Paip lang: Linguaxe de programación baseada en pipelines deseñada para facilitar a transpilación
 
 # Brief description:
+The normal way of calling functions currently is to pass all the arguments after the function name. While it works fine for simple expressions, it does not scale well for more complex ones, producing nesting.
 
-The current status quo is for functions to receive their arguments after the function name.
+This nesting of function calls inverts the logical order of operations, turning the logic from linear left to right to nonlinear inside out, which makes the reader jump all over the expression in order to parse it correctly.
 
-3 + 4 turns into `print(add(3, 4))`
+The proposed solution is that instead of this:
 
-This approach makes it hard to compose functions in a clean way.
+3 + 4 turning into `print(add(3, 4))`
+
+Which does not scale well with complexity:
 
 (3 + 4) * 5 turns into `print(mul(add(3,4), 5))`
 
-The longer the expression, the harder it becomes to read and understand its meaning.
-
-To that end I propose a novel syntax where the function acts as an infix operator.
+We instead do the following:
 
 (3 + 4) * 5 turns into 
+
 ```
 3
  .add 4 
@@ -28,9 +30,11 @@ To that end I propose a novel syntax where the function acts as an infix operato
  .print
 ```
 
-Making function composition a natural chaining of functions greatly improves readability.
+Making function composition a natural chaining of functions and greatly improving readability.
 
-As the implementation of such a syntax in other languages is improbable, I'll also propose a mechanism by which to transpile Paip lang to other langs by implementing a reduced set of functions in the target language.
+As the implementation of such a syntax in other languages is improbable, a mechanism by which to transpile Paip lang to other langs will be provided by implementing a reduced set of functions in the target language.
+
+The language will be built on top of a set of core built-in operations that the user can compose to produce a desired output. This makes it simple to transpile to any language that can implement this core set of built-in functions, as the rest of the language is just combinations and compositions of them.
 
 # Objectives:
 
