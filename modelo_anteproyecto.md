@@ -20,7 +20,13 @@ The longer the expression, the harder it becomes to read and understand its mean
 
 To that end I propose a novel syntax where the function acts as an infix operator.
 
-(3 + 4) * 5 turns into `3.add 4 .mul 5 .print`
+(3 + 4) * 5 turns into 
+```
+3
+ .add 4 
+ .mul 5 
+ .print
+```
 
 Making function composition a natural chaining of functions greatly improves readability.
 
@@ -40,13 +46,13 @@ In addition (and in order of probability),
 - tests suite to check everything is working
 - language server
 
-All this elements are to be done in an FOSS manner allowing anyone to contribute to the project.
+All this elements will be done in an FOSS manner allowing anyone to contribute to the project.
 
 As the main goal of the project is to gain experience with designing and implementing languages, all the objectives are to be implemented at the lowest level possible, that is, without using off the shelf full solutions like Bison or ANTLR, but opting for smaller libraries for complex algorithms and data structures such as LR/LL parsers or trees.
 
 # Metodology:
 
-Incremental and iterative, employing common a git develompent flow, with conventional commits. 
+Incremental and iterative, employing a common git develompent flow, with conventional commits. 
 
 # Main phases:
 
@@ -59,10 +65,10 @@ Incremental and iterative, employing common a git develompent flow, with convent
 
 # Required materials:
 
-Personal computer
-Text editor
-Rust and Cargo
-Git
+- Personal computer
+- Text editor
+- Rust and Cargo
+- Git
 
 # Category:
 
