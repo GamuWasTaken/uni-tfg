@@ -1,38 +1,42 @@
 # Titles:
 
-[en] Paip lang: A pipeline based programming language designed for easy transpilation
+[en] Paip lang: a pipeline based programming language designed for easy transpilation
 
-[es] Paip lang: Lenguaje de programación basado en pipelines diseñado para fácil transpilación
+[es] Paip lang: un lenguaje de programación basado en pipelines diseñado para fácil transpilación
 
-[gl] Paip lang: Linguaxe de programación baseada en pipelines deseñada para facilitar a transpilación
+[gl] Paip lang: unha linguaxe de programación baseada en pipelines deseñada para a transpilación sinxela
 
 # Brief description:
-The normal way of calling functions currently is to pass all the arguments after the function name. While it works fine for simple expressions, it does not scale well for more complex ones, producing nesting.
+The syntax of a language shapes the understanding and perspective in which programming concepts are perceived, function composition is as simple as passing the output of a function as the input of another, and yet, most languages represent this by twisting the flow of the program. For example, in JavaScript, the way to call functions is to pass all the arguments after the function name inside parentheses. 
+
+`log("Hello")`
+
+While it works fine for simple expressions, when composition is used it does not scale well, producing nesting.
+
+`log( mulitply( add( 6, 7 ), 8 )`
 
 This nesting of function calls inverts the logical order of operations, turning the logic from linear left to right to nonlinear inside out, which makes the reader jump all over the expression in order to parse it correctly.
 
-The proposed solution is that instead of this:
+The proposed solution is that instead of passing all the parameters after the name, the first parameter of the function comes before the name, this way, the flow does not get bent inside out:
 
-3 + 4 turning into `print(add(3, 4))`
+Going from this: `log( mulitply( add( 6, 7 ), 8 )`
 
-Which does not scale well with complexity:
-
-(3 + 4) * 5 turns into `print(mul(add(3,4), 5))`
-
-We instead do the following:
-
-(3 + 4) * 5 turns into 
+To this:
 
 ```
-3
- .add 4 
- .mul 5 
- .print
+6
+ .add 7 
+ .multiply 8 
+ .log
 ```
 
-Making function composition a natural chaining of functions and greatly improving readability.
+This change makes function composition a natural chaining of functions and greatly improves readability. The focus on function composition makes it easy for modular code to emerge, making it so not only it is easy to read but also easy to understand.
 
-As the implementation of such a syntax in other languages is improbable, a mechanism by which to transpile Paip lang to other langs will be provided by implementing a reduced set of functions in the target language.
+To some extent this syntax can be achieved in other languages by using the builder pattern, but in most cases it makes the implementation boilerplatey and slow to iterate upon.
+
+While there are some languages like Bash `|`, Elixir `|>` or Ocaml `|>` that have a pipe operator, it has limitations either in context or expressivity. The proposed solution is the main way of calling functions, putting function composition as a keystone of the language, leveraging the syntax to make it expressive yet readable.
+
+As the implementation of such a syntax in other languages is improbable, because it would require a full rework of the language, a mechanism by which to transpile Paip lang to other langs will be provided, making it easy to write Paip in any codebase and allowing for portability between languages.
 
 The language will be built on top of a set of core built-in operations that the user can compose to produce a desired output. This makes it simple to transpile to any language that can implement this core set of built-in functions, as the rest of the language is just combinations and compositions of them.
 
