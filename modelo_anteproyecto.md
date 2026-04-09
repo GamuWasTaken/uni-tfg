@@ -7,6 +7,7 @@
 [gl] Paip lang: unha linguaxe de programación baseada en pipelines deseñada para a transpilación sinxela
 
 # Brief description:
+
 One of the goals a high-level programming language should have is to make it easy to represent complex ideas in a simple way, that is one of the reasons to justify all the abstractions they bring. From this, one would assume that simple ideas should then also be simple to represent, function composition is as simple as passing the output of a function as the input of another, and yet, most languages achieve this by twisting the flow of the program. In most of the C syntax languages, for example, in JavaScript, the way to call functions is to pass all the arguments after the function name inside parentheses. 
 
 `log("Hello")`
@@ -59,12 +60,17 @@ As the main goal of the project is to gain experience with designing and impleme
 
 # Metodology:
 
-Incremental and iterative, employing a common git develompent flow, with conventional commits. 
+The methodology used for the development of the project will be an incremental and iterative one, based on the Agile principles, to allow a gradual evolution of the project while maintaining a flexible set of objectives with a fixed core.
+
+From the technical perspective, a standardized Git flow will be used, this includes:
+- Feature branching, to avoid instability in the main branch, features will first be completed in their own branch and merged into main.
+- Conventional commits, a fixed set of categories, and a brief but complete description in the message of every commit.
+- Continuous integration, tests will be run on each commit to ensure correctness.
 
 # Main phases:
 
-1. Exploration and tech selection
-2. Design of the language
+1. Design of the language
+2. Exploration and tech selection
 3. Implementation of the lexer and parser
 4. Implementation of an interpreter
 5. Implementation of the transpiler
