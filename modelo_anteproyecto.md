@@ -7,38 +7,37 @@
 [gl] Paip lang: unha linguaxe de programación baseada en pipelines deseñada para a transpilación sinxela
 
 # Brief description:
-The syntax of a language shapes the understanding and perspective in which programming concepts are perceived, function composition is as simple as passing the output of a function as the input of another, and yet, most languages represent this by twisting the flow of the program. For example, in JavaScript, the way to call functions is to pass all the arguments after the function name inside parentheses. 
+One of the goals a high-level programming language should have is to make it easy to represent complex ideas in a simple way, that is one of the reasons to justify all the abstractions they bring. From this, one would assume that simple ideas should then also be simple to represent, function composition is as simple as passing the output of a function as the input of another, and yet, most languages achieve this by twisting the flow of the program. In most of the C syntax languages, for example, in JavaScript, the way to call functions is to pass all the arguments after the function name inside parentheses. 
 
 `log("Hello")`
 
-While it works fine for simple expressions, when composition is used it does not scale well, producing nesting.
+While it works fine for simple expressions, when composition is used, it does not scale well, producing nesting.
 
 `log( mulitply( add( 6, 7 ), 8 )`
 
-This nesting of function calls inverts the logical order of operations, turning the logic from linear left to right to nonlinear inside out, which makes the reader jump all over the expression in order to parse it correctly.
+This nesting of function calls inverts the logical order of operations, turning the logic flow from linear left to right to nonlinear inside out, which makes the reader jump all over the expression in order to parse it correctly.
 
-The proposed solution is that instead of passing all the parameters after the name, the first parameter of the function comes before the name, this way, the flow does not get bent inside out:
+Paip solves this by, instead of passing all the parameters after the name, the first parameter of the function comes before the name, this way, the flow does not get bent inside out:
 
 Going from this: `log( mulitply( add( 6, 7 ), 8 )`
-
 To this:
-
 ```
 6
  .add 7 
  .multiply 8 
  .log
 ```
+This change makes function composition a natural chaining of functions and greatly improves readability. Also, the focus on function composition makes it easy for modular code to emerge, making it so not only it is easy to read but also easy to understand.
 
-This change makes function composition a natural chaining of functions and greatly improves readability. The focus on function composition makes it easy for modular code to emerge, making it so not only it is easy to read but also easy to understand.
+This kind of syntax is not new, it is often called the builder pattern and emerges from the fact that methods receive as their first argument the object they are being called from. The `this` keyword in Java, for example, is no more than sugar for referencing the first argument of the function, other languages make it more explicit, for example, Python with the `self` parameter.
 
-To some extent this syntax can be achieved in other languages by using the builder pattern, but in most cases it makes the implementation boilerplatey and slow to iterate upon.
-
-While there are some languages like Bash `|`, Elixir `|>` or Ocaml `|>` that have a pipe operator, it has limitations either in context or expressivity. The proposed solution is the main way of calling functions, putting function composition as a keystone of the language, leveraging the syntax to make it expressive yet readable.
+In another way, this syntax also comes from the pipe operator. There are some languages like Bash `|`, Elixir `|>` or Ocaml `|>` that have it, although it usually comes with limitations either in context or expressivity. The proposed solution is the main way of calling functions, putting function composition as a keystone of the language, and leveraging the syntax to make it expressive yet readable.
 
 As the implementation of such a syntax in other languages is improbable, because it would require a full rework of the language, a mechanism by which to transpile Paip lang to other langs will be provided, making it easy to write Paip in any codebase and allowing for portability between languages.
 
-The language will be built on top of a set of core built-in operations that the user can compose to produce a desired output. This makes it simple to transpile to any language that can implement this core set of built-in functions, as the rest of the language is just combinations and compositions of them.
+To achieve this, the language will be built on top of a set of core built-in operations that the user can compose to produce a desired output. This makes it simple to transpile to other languages that are able to implement this core set of built-in functions, as the rest of the language is just combinations and compositions of them.
+
+Making it transpilable not only makes it portable but also brings the possibility to add typechecking to codebases that normally could not have it. Even better, it gives the language the ability to be embedable in other languages due to Paip also being a simple yet powerful language.
 
 # Objectives:
 
